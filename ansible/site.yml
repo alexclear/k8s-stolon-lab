@@ -1,0 +1,20 @@
+- hosts: all
+  become: yes
+  tasks:
+    - debug: var=ansible_default_ipv4
+
+- import_playbook: ./kubespray/cluster.yml
+
+- hosts: kube1
+  become: yes
+  roles:
+  - role: helm
+  - { role: k8s-namespace, k8s_namespace: "stolon" }
+  - role: etcd-operator
+  - role: k8s-etcd-cluster
+  - role: k8s-stolon-cluster
+
+- hosts: jenkins
+  become: yes
+  roles:
+  - role: jenkins

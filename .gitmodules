@@ -1,0 +1,27 @@
+[submodule "ansible/kubespray"]
+	path = ansible/kubespray
+	url = https://github.com/kubernetes-incubator/kubespray.git
+[submodule "ansible/roles/helm"]
+	path = ansible/roles/helm
+	url = https://github.com/kofonfor/ansible-role-helm.git
+[submodule "ansible/roles/jenkins"]
+	path = ansible/roles/jenkins
+	url = https://github.com/kofonfor/ansible-role-jenkins.git
+[submodule "ansible/roles/java"]
+	path = ansible/roles/java
+	url = https://github.com/kofonfor/ansible-role-java.git
+[submodule "ansible/roles/oracle-jdk"]
+	path = ansible/roles/oracle-jdk
+	url = https://github.com/kofonfor/ansible-role-oracle-jdk.git
+[submodule "ansible/roles/k8s-namespace"]
+	path = ansible/roles/k8s-namespace
+	url = git@github.com:kofonfor/ansible-role-k8s-namespace.git
+[submodule "ansible/roles/etcd-operator"]
+	path = ansible/roles/etcd-operator
+	url = git@github.com:kofonfor/ansible-role-etcd-operator.git
+[submodule "ansible/roles/k8s-etcd-cluster"]
+	path = ansible/roles/k8s-etcd-cluster
+	url = git@github.com:kofonfor/ansible-role-k8s-etcd-cluster.git
+[submodule "ansible/roles/k8s-stolon-cluster"]
+	path = ansible/roles/k8s-stolon-cluster
+	url = git@github.com:kofonfor/ansible-role-k8s-stolon-cluster.git
