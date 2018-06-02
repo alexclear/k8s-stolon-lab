@@ -13,8 +13,3 @@
   - role: etcd-operator
   - role: k8s-etcd-cluster
   - role: k8s-stolon-cluster
-
-- hosts: jenkins
-  become: yes
-  roles:
-  - role: jenkins

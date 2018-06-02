@@ -63,25 +63,7 @@ Vagrant.configure("2") do |config|
 
     kube3.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
     kube3.vm.provision "shell", inline: "apt-get install -y python"
-  end
-
-  config.vm.define "jenkins" do |jenkins|
-    jenkins.vm.box = "ubuntu/xenial64"
-    jenkins.vm.hostname = "jenkins"
-    jenkins.vm.network "private_network", ip: $JENKINS_IP
-    jenkins.vm.network "forwarded_port", guest: 8080, host: 18089
-
-    jenkins.vm.provider :virtualbox do |v, override|
-      v.gui = false
-      v.customize ["modifyvm", :id, "--cpus", 2]
-      v.customize ["modifyvm", :id, "--memory", 2048]
-      v.customize ["modifyvm", :id, "--cableconnected1", "on"]
-      v.customize ["modifyvm", :id, "--cableconnected2", "on"]
-    end
-
-    jenkins.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
-    jenkins.vm.provision "shell", inline: "apt-get install -y python"
-    jenkins.vm.provision "ansible" do |ansible|
+    kube3.vm.provision "ansible" do |ansible|
       ansible.playbook = "ansible/site.yml"
       ansible.inventory_path = "ansible/inventory"
       ansible.become = true
