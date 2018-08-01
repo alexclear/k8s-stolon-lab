@@ -1,11 +1,11 @@
 [kube1]
-kube1 ansible_host=172.16.137.2
+kube1 ansible_host=172.16.137.2 access_ip=172.16.137.2 ip=172.16.137.2
 
 [kube2]
-kube2 ansible_host=172.16.137.3
+kube2 ansible_host=172.16.137.3 access_ip=172.16.137.3 ip=172.16.137.3
 
 [kube3]
-kube3 ansible_host=172.16.137.4
+kube3 ansible_host=172.16.137.4 access_ip=172.16.137.4 ip=172.16.137.4
 
 [kube-node:children]
 kube1

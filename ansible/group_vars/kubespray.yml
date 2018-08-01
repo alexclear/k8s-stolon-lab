@@ -132,6 +132,7 @@ dashboard_enabled: true
 registry_enabled: false
 local_volume_provisioner_enabled: false
 local_volume_provisioner_base_dir: /mnt/disks
+calico_ip_auto_method: "can-reach=172.16.137.1"
 
 etcd_operator_namespace: stolon
 etcd_cluster_name: stolon-etcd

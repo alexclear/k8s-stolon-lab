@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--cableconnected2", "on"]
     end
 
-    kube1.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
+#    kube1.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
     kube1.vm.provision "shell", inline: "apt-get install -y python"
   end
 
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--cableconnected2", "on"]
     end
 
-    kube2.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
+#    kube2.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
     kube2.vm.provision "shell", inline: "apt-get install -y python"
   end
 
@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--cableconnected2", "on"]
     end
 
-    kube3.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
+#    kube3.vm.provision "shell", inline: "(ip -4 route get 8.8.8.8 | grep 172.16.137) || route add -net 8.8.8.8 netmask 255.255.255.255 enp0s8"
     kube3.vm.provision "shell", inline: "apt-get install -y python"
     kube3.vm.provision "ansible" do |ansible|
       ansible.playbook = "ansible/site.yml"
